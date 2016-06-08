@@ -1,9 +1,14 @@
 <div>
-    <ul>
-        <li *ngFor="let todo of todos">
-            <h3>{{todo.title}}</h3>
-            <h4>{{todo.date}}</h4>
-            <p>{{todo.content}}</p>
-        </li>
-    </ul>
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Date</th>
+        </tr>
+        <tr *ngFor="let todo of todos">
+            <td>{{todo.title}}</td>
+            <td>{{todo.content}}</td>
+            <td>{{todo.date | date:"short"}}</td>
+        </tr>
+    </table>
 </div>

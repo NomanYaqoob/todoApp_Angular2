@@ -1,8 +1,15 @@
-<div>
-    <h2>Add a Todo</h2>
-    <label for="">Title</label>
-    <input type="text" [(ngModel)]="todo.title" placeholder="title">
-    <label for="">Description</label>
-    <input type="text" [(ngModel)]="todo.content" placeholder="description">
-    <button (click)="addTodo(todo)">Add</button>
+<h2>
+    Add a Todo</h2>
+<div class="form-group">
+    <form action="">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control" [(ngModel)]="todo.title" placeholder="title">
+        </div>
+        <div class="form-group">
+            <label for="content">Description</label>
+            <input type="text" name="content" class="form-control" [(ngModel)]="todo.content" placeholder="description">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addTodo(todo)">Add Todo</button>
+    </form>    
 </div>

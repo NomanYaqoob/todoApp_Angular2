@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+
+        <h1>{{title}}</h1>
+        <button type="button" [routerLink]="['ToDoList']" class="btn btn-primary">List of Todos</button>
+        <button type="button" [routerLink]="['NewTodo']" class="btn btn-primary">Add to Todo</button>
+        <br><br>
+        <router-outlet></router-outlet>
+    </div>
+</div>

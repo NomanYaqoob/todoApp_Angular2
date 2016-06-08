@@ -17,10 +17,10 @@ var NewTodoComponent = (function () {
         this.todo = new todo_1.Todo();
     }
     NewTodoComponent.prototype.addTodo = function (todo) {
+        console.log("addTodo Called");
         todo.date = new Date();
         this.todoService.addTodo(todo);
         this.todoService.getTodos().then(function (todos) { return console.log(todos); });
-        // this.todo = null;
     };
     NewTodoComponent = __decorate([
         core_1.Component({

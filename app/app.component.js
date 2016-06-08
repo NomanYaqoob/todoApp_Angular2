@@ -12,15 +12,18 @@ var core_1 = require("@angular/core");
 var router_deprecated_1 = require("@angular/router-deprecated");
 var todolist_component_1 = require("./todolist.component");
 var newtodo_component_1 = require("./newtodo.component");
+var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
+var common_1 = require('@angular/common');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = "Todo Application";
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: "my-app",
-            template: "\n    \n    <h1>{{title}}</h1>\n    <a [routerLink] = \"['ToDoList']\">List of Todos</a>\n    <a [routerLink] = \"['NewTodo']\">Add a Todo</a>\n    <router-outlet></router-outlet>\n    ",
+            templateUrl: "/app/app.component.html",
             providers: [router_deprecated_1.ROUTER_PROVIDERS],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, todolist_component_1.TodoListComponent]
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES, todolist_component_1.TodoListComponent, common_1.CORE_DIRECTIVES, common_1.FORM_DIRECTIVES, ng2_bootstrap_1.BUTTON_DIRECTIVES, ng2_bootstrap_1.AlertComponent]
         }),
         router_deprecated_1.RouteConfig([
             {

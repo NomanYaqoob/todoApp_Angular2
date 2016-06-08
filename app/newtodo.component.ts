@@ -15,9 +15,9 @@ export class NewTodoComponent {
     todo: Todo;
 
     addTodo(todo: Todo) {
+        console.log("addTodo Called");
         todo.date = new Date();
         this.todoService.addTodo(todo);
         this.todoService.getTodos().then(todos => console.log(todos));
-        // this.todo = null;
     }
 }

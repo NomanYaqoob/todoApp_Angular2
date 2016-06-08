@@ -2,17 +2,14 @@ import {Component} from "@angular/core";
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "@angular/router-deprecated";
 import {TodoListComponent} from "./todolist.component"
 import {NewTodoComponent} from "./newtodo.component"
+import {AlertComponent, BUTTON_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap'
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
+
 @Component({
     selector: "my-app",
-    template: `
-    
-    <h1>{{title}}</h1>
-    <a [routerLink] = "['ToDoList']">List of Todos</a>
-    <a [routerLink] = "['NewTodo']">Add a Todo</a>
-    <router-outlet></router-outlet>
-    `,
+    templateUrl: "/app/app.component.html",
     providers: [ROUTER_PROVIDERS],
-    directives: [ROUTER_DIRECTIVES, TodoListComponent]
+    directives: [ROUTER_DIRECTIVES, TodoListComponent, CORE_DIRECTIVES, FORM_DIRECTIVES, BUTTON_DIRECTIVES, AlertComponent]
 })
 
 
@@ -24,7 +21,7 @@ import {NewTodoComponent} from "./newtodo.component"
         component: TodoListComponent
     },
     {
-        path:"/add",
+        path: "/add",
         name: "NewTodo",
         component: NewTodoComponent
     }
@@ -32,5 +29,5 @@ import {NewTodoComponent} from "./newtodo.component"
 
 
 export class AppComponent {
-    title: "Todo App";
+    title: string =  "Todo Application";
 }
